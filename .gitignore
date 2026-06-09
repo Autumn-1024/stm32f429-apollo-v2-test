@@ -1,0 +1,43 @@
+# Keil 编译输出
+Output/
+Objects/
+Listings/
+
+# Keil 用户配置
+*.uvguix.*
+*.uvoptx
+
+# 临时文件
+*.bak
+*.dep
+*.d
+*.crf
+*.o
+*.lst
+*.htm
+*.lnp
+*.sct
+*.tra
+*.map
+*.axf
+*.iex
+*.plg
+*.UNV
+*.Uv2
+*.uv2
+
+# 编译产物
+*.hex
+*.bin
+*.sct
+*.map
+*.axf
+
+# 文档资源
+Middlewares/FATFS/documents/res/
+Middlewares/FATFS/documents/*.png
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store
