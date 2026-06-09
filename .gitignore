@@ -1,0 +1,28 @@
+# Keil 编译输出
+Output/
+MDK-ARM/Listings/
+MDK-ARM/Objects/
+MDK-ARM/.vscode/
+MDK-ARM/*.uvguix.*
+MDK-ARM/*.uvoptx
+MDK-ARM/*.dbgconf
+
+# 编译产物
+*.hex
+*.bin
+*.axf
+*.map
+*.sct
+*.tra
+*.lnp
+*.htm
+*.dep
+*.d
+*.o
+*.crf
+*.lst
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store
