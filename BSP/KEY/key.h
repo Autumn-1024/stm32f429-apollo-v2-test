@@ -1,15 +1,23 @@
 /**
  ****************************************************************************************************
  * @file        key.h
- * @author      ALIENTEK
+ * @author      ÕıµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
  * @version     V1.0
  * @date        2022-4-20
- * @brief       æŒ‰é”®é©±åŠ¨ å¤´æ–‡ä»¶
- * @license     Copyright (c) 2020-2032, æ­£ç‚¹åŸå­(å¹¿å·)ç”µå­ä¿¡æ¯ç§‘æŠ€æœ‰é™å…¬å¸
+ * @brief       °´¼üÊäÈë Çı¶¯´úÂë
+ * @license     Copyright (c) 2020-2032, ¹ãÖİÊĞĞÇÒíµç×Ó¿Æ¼¼ÓĞÏŞ¹«Ë¾
  ****************************************************************************************************
  * @attention
  *
- * å®éªŒå¹³å°:æ­£ç‚¹åŸå­ é˜¿æ³¢ç½— V2 F429å¼€å‘æ¿
+ * ÊµÑéÆ½Ì¨:ÕıµãÔ­×Ó °¢²¨ÂŞ F429¿ª·¢°å
+ * ÔÚÏßÊÓÆµ:www.yuanzige.com
+ * ¼¼ÊõÂÛÌ³:www.openedv.com
+ * ¹«Ë¾ÍøÖ·:www.alientek.com
+ * ¹ºÂòµØÖ·:openedv.taobao.com
+ *
+ * ĞŞ¸ÄËµÃ÷
+ * V1.0 20220420
+ * µÚÒ»´Î·¢²¼
  *
  ****************************************************************************************************
  */
@@ -20,38 +28,56 @@
 #include "./Middlewares/SYSTEM/sys/sys.h"
 
 /******************************************************************************************/
-/* å¼•è„š å®šä¹‰ */
+/* Òı½Å ¶¨Òå */
 
-#define KEY0_GPIO_PORT                  GPIOC
-#define KEY0_GPIO_PIN                   GPIO_PIN_0
-#define KEY0_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOC_CLK_ENABLE(); }while(0)
+#define KEY0_GPIO_PORT                  GPIOH
+#define KEY0_GPIO_PIN                   GPIO_PIN_3
+#define KEY0_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOH_CLK_ENABLE(); }while(0)   /* PH¿ÚÊ±ÖÓÊ¹ÄÜ */
 
-#define KEY1_GPIO_PORT                  GPIOD
-#define KEY1_GPIO_PIN                   GPIO_PIN_3
-#define KEY1_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOD_CLK_ENABLE(); }while(0)
+#define KEY1_GPIO_PORT                  GPIOH
+#define KEY1_GPIO_PIN                   GPIO_PIN_2
+#define KEY1_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOH_CLK_ENABLE(); }while(0)   /* PH¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define KEY2_GPIO_PORT                  GPIOC
 #define KEY2_GPIO_PIN                   GPIO_PIN_13
-#define KEY2_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOC_CLK_ENABLE(); }while(0)
+#define KEY2_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOC_CLK_ENABLE(); }while(0)   /* PC¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define WKUP_GPIO_PORT                  GPIOA
 #define WKUP_GPIO_PIN                   GPIO_PIN_0
-#define WKUP_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)
+#define WKUP_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* PA¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 /******************************************************************************************/
 
-#define KEY0        HAL_GPIO_ReadPin(KEY0_GPIO_PORT, KEY0_GPIO_PIN)
-#define KEY1        HAL_GPIO_ReadPin(KEY1_GPIO_PORT, KEY1_GPIO_PIN)
-#define KEY2        HAL_GPIO_ReadPin(KEY2_GPIO_PORT, KEY2_GPIO_PIN)
-#define WK_UP       HAL_GPIO_ReadPin(WKUP_GPIO_PORT, WKUP_GPIO_PIN)
+#define KEY0        HAL_GPIO_ReadPin(KEY0_GPIO_PORT, KEY0_GPIO_PIN)     /* ¶ÁÈ¡KEY0Òı½Å */
+#define KEY1        HAL_GPIO_ReadPin(KEY1_GPIO_PORT, KEY1_GPIO_PIN)     /* ¶ÁÈ¡KEY1Òı½Å */
+#define KEY2        HAL_GPIO_ReadPin(KEY2_GPIO_PORT, KEY2_GPIO_PIN)     /* ¶ÁÈ¡KEY2Òı½Å */
+#define WK_UP       HAL_GPIO_ReadPin(WKUP_GPIO_PORT, WKUP_GPIO_PIN)     /* ¶ÁÈ¡WKUPÒı½Å */
 
 
-#define KEY0_PRES    1
-#define KEY1_PRES    2
-#define KEY2_PRES    3
-#define WKUP_PRES    4
+#define KEY0_PRES    1              /* KEY0°´ÏÂ */
+#define KEY1_PRES    2              /* KEY1°´ÏÂ */
+#define KEY2_PRES    3              /* KEY2°´ÏÂ */
+#define WKUP_PRES    4              /* KEY_UP°´ÏÂ(¼´WK_UP) */
 
-void key_init(void);
-uint8_t key_scan(uint8_t mode);
+void key_init(void);                /* °´¼ü³õÊ¼»¯º¯Êı */
+uint8_t key_scan(uint8_t mode);     /* °´¼üÉ¨Ãèº¯Êı */
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

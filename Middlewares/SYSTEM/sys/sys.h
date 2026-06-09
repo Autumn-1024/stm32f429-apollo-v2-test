@@ -36,7 +36,6 @@
  */
 #define SYS_SUPPORT_OS         0
 
-
 /*函数声明*******************************************************************************************/
 
 void sys_nvic_set_vector_table(uint32_t baseaddr, uint32_t offset);                         /* 设置中断偏移量 */

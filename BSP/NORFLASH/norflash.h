@@ -1,23 +1,23 @@
 /**
  ****************************************************************************************************
  * @file        norflash.h
- * @author      ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Å¶ï¿½(ALIENTEK)
+ * @author      ÕýµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
  * @version     V1.0
  * @date        2022-04-20
- * @brief       NOR FLASH(25QXX) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
- * @license     Copyright (c) 2020-2032, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
+ * @brief       NOR FLASH(25QXX) Çý¶¯´úÂë
+ * @license     Copyright (c) 2020-2032, ¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
  ****************************************************************************************************
  * @attention
  *
- * Êµï¿½ï¿½Æ½Ì¨:ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ F429ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
- * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµ:www.yuanzige.com
- * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì³:www.openedv.com
- * ï¿½ï¿½Ë¾ï¿½ï¿½Ö·:www.alientek.com
- * ï¿½ï¿½ï¿½ï¿½ï¿½Ö·:openedv.taobao.com
+ * ÊµÑéÆ½Ì¨:ÕýµãÔ­×Ó °¢²¨ÂÞ F429¿ª·¢°å
+ * ÔÚÏßÊÓÆµ:www.yuanzige.com
+ * ¼¼ÊõÂÛÌ³:www.openedv.com
+ * ¹«Ë¾ÍøÖ·:www.alientek.com
+ * ¹ºÂòµØÖ·:openedv.taobao.com
  *
- * ï¿½Þ¸ï¿½Ëµï¿½ï¿½
+ * ÐÞ¸ÄËµÃ÷
  * V1.0 20220420
- * ï¿½ï¿½Ò»ï¿½Î·ï¿½ï¿½ï¿½
+ * µÚÒ»´Î·¢²¼
  *
  ****************************************************************************************************
  */
@@ -29,21 +29,21 @@
 
 
 /******************************************************************************************/
-/* NORFLASH Æ¬Ñ¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+/* NORFLASH Æ¬Ñ¡ Òý½Å ¶¨Òå */
 
 #define NORFLASH_CS_GPIO_PORT           GPIOF
 #define NORFLASH_CS_GPIO_PIN            GPIO_PIN_6
-#define NORFLASH_CS_GPIO_CLK_ENABLE()   do{ __HAL_RCC_GPIOF_CLK_ENABLE(); }while(0)   /* PFï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define NORFLASH_CS_GPIO_CLK_ENABLE()   do{ __HAL_RCC_GPIOF_CLK_ENABLE(); }while(0)   /* PF¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 /******************************************************************************************/
 
-/* NORFLASH Æ¬Ñ¡ï¿½Åºï¿½ */
+/* NORFLASH Æ¬Ñ¡ÐÅºÅ */
 #define NORFLASH_CS(x)      do{ x ? \
                                   HAL_GPIO_WritePin(NORFLASH_CS_GPIO_PORT, NORFLASH_CS_GPIO_PIN, GPIO_PIN_SET) : \
                                   HAL_GPIO_WritePin(NORFLASH_CS_GPIO_PORT, NORFLASH_CS_GPIO_PIN, GPIO_PIN_RESET); \
                             }while(0)
 
-/* FLASHÐ¾Æ¬ï¿½Ð±ï¿½ */
+/* FLASHÐ¾Æ¬ÁÐ±í */
 #define W25Q80      0XEF13          /* W25Q80   Ð¾Æ¬ID */
 #define W25Q16      0XEF14          /* W25Q16   Ð¾Æ¬ID */
 #define W25Q32      0XEF15          /* W25Q32   Ð¾Æ¬ID */
@@ -56,7 +56,7 @@
 #define NM25Q64     0X5216          /* NM25Q64  Ð¾Æ¬ID */
 #define NM25Q128    0X5217          /* NM25Q128 Ð¾Æ¬ID */
 
-/* Ö¸ï¿½ï¿½ï¿½ */
+/* Ö¸Áî±í */
 #define FLASH_WriteEnable           0x06 
 #define FLASH_WriteDisable          0x04 
 #define FLASH_ReadStatusReg1        0x05 
@@ -85,27 +85,27 @@
 #define FLASH_EnterQPIMode          0x38
 #define FLASH_ExitQPIMode           0xFF
 
-extern uint16_t norflash_TYPE;      /* ï¿½ï¿½ï¿½ï¿½FLASHÐ¾Æ¬ï¿½Íºï¿½ */
+extern uint16_t norflash_TYPE;      /* ¶¨ÒåFLASHÐ¾Æ¬ÐÍºÅ */
 
 /******************************************************************************************/
 
-/* ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ */
-static void norflash_wait_busy(void);                                               /* ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ */
-static void norflash_send_address(uint32_t address);                                /* ï¿½ï¿½ï¿½Íµï¿½Ö· */
-static void norflash_write_page(uint8_t *pbuf, uint32_t addr, uint16_t datalen);    /* Ð´ï¿½ï¿½page */
-static void norflash_write_nocheck(uint8_t *pbuf, uint32_t addr, uint16_t datalen); /* Ð´flash,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+/* ¾²Ì¬º¯Êý */
+static void norflash_wait_busy(void);                                               /* µÈ´ý¿ÕÏÐ */
+static void norflash_send_address(uint32_t address);                                /* ·¢ËÍµØÖ· */
+static void norflash_write_page(uint8_t *pbuf, uint32_t addr, uint16_t datalen);    /* Ð´Èëpage */
+static void norflash_write_nocheck(uint8_t *pbuf, uint32_t addr, uint16_t datalen); /* Ð´flash,²»´ø²Á³ý */
 
-/* ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ */
-void norflash_init(void);                                                           /* ï¿½ï¿½Ê¼ï¿½ï¿½25QXX */
-uint16_t norflash_read_id(void);                                                    /* ï¿½ï¿½È¡FLASH ID */
-void norflash_write_enable(void);                                                   /* Ð´Ê¹ï¿½ï¿½ */
-uint8_t norflash_read_sr(uint8_t regno);                                            /* ï¿½ï¿½È¡×´Ì¬ï¿½Ä´ï¿½ï¿½ï¿½ */
-void norflash_write_sr(uint8_t regno, uint8_t sr);                                  /* Ð´×´Ì¬ï¿½Ä´ï¿½ï¿½ï¿½ */
+/* ÆÕÍ¨º¯Êý */
+void norflash_init(void);                                                           /* ³õÊ¼»¯25QXX */
+uint16_t norflash_read_id(void);                                                    /* ¶ÁÈ¡FLASH ID */
+void norflash_write_enable(void);                                                   /* Ð´Ê¹ÄÜ */
+uint8_t norflash_read_sr(uint8_t regno);                                            /* ¶ÁÈ¡×´Ì¬¼Ä´æÆ÷ */
+void norflash_write_sr(uint8_t regno, uint8_t sr);                                  /* Ð´×´Ì¬¼Ä´æÆ÷ */
 
-void norflash_erase_chip(void);                                                     /* ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½ï¿½ */
-void norflash_erase_sector(uint32_t saddr);                                         /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
-void norflash_read(uint8_t *pbuf, uint32_t addr, uint16_t datalen);                 /* ï¿½ï¿½È¡flash */
-void norflash_write(uint8_t *pbuf, uint32_t addr, uint16_t datalen);                /* Ð´ï¿½ï¿½flash */
+void norflash_erase_chip(void);                                                     /* ÕûÆ¬²Á³ý */
+void norflash_erase_sector(uint32_t saddr);                                         /* ÉÈÇø²Á³ý */
+void norflash_read(uint8_t *pbuf, uint32_t addr, uint16_t datalen);                 /* ¶ÁÈ¡flash */
+void norflash_write(uint8_t *pbuf, uint32_t addr, uint16_t datalen);                /* Ð´Èëflash */
 
 #endif
 

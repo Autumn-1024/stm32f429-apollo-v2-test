@@ -1,23 +1,23 @@
 /**
  ****************************************************************************************************
  * @file        ethernet.h
- * @author      ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Å¶ï¿½(ALIENTEK)
+ * @author      ÕýµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
  * @version     V1.0
  * @date        2022-08-01
- * @brief       ETHERNET ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
- * @license     Copyright (c) 2020-2032, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
+ * @brief       ETHERNET Çý¶¯´úÂë
+ * @license     Copyright (c) 2020-2032, ¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
  ****************************************************************************************************
  * @attention
  *
- * Êµï¿½ï¿½Æ½Ì¨:ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ F429ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
- * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµ:www.yuanzige.com
- * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì³:www.openedv.com
- * ï¿½ï¿½Ë¾ï¿½ï¿½Ö·:www.alientek.com
- * ï¿½ï¿½ï¿½ï¿½ï¿½Ö·:openedv.taobao.com
+ * ÊµÑéÆ½Ì¨:ÕýµãÔ­×Ó °¢²¨ÂÞ F429¿ª·¢°å
+ * ÔÚÏßÊÓÆµ:www.yuanzige.com
+ * ¼¼ÊõÂÛÌ³:www.openedv.com
+ * ¹«Ë¾ÍøÖ·:www.alientek.com
+ * ¹ºÂòµØÖ·:openedv.taobao.com
  *
- * ï¿½Þ¸ï¿½Ëµï¿½ï¿½
+ * ÐÞ¸ÄËµÃ÷
  * V1.0 20211202
- * ï¿½ï¿½Ò»ï¿½Î·ï¿½ï¿½ï¿½
+ * µÚÒ»´Î·¢²¼
  *
  ****************************************************************************************************
  */
@@ -29,54 +29,54 @@
 
 
 /******************************************************************************************/
-/* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+/* Òý½Å ¶¨Òå */
 
 #define ETH_CLK_GPIO_PORT               GPIOA
 #define ETH_CLK_GPIO_PIN                GPIO_PIN_1
-#define ETH_CLK_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_CLK_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_MDIO_GPIO_PORT              GPIOA
 #define ETH_MDIO_GPIO_PIN               GPIO_PIN_2
-#define ETH_MDIO_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE();}while(0)                 /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_MDIO_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE();}while(0)                 /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_CRS_GPIO_PORT               GPIOA
 #define ETH_CRS_GPIO_PIN                GPIO_PIN_7
-#define ETH_CRS_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_CRS_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_MDC_GPIO_PORT               GPIOC
 #define ETH_MDC_GPIO_PIN                GPIO_PIN_1
-#define ETH_MDC_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOC_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_MDC_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOC_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_RXD0_GPIO_PORT              GPIOC
 #define ETH_RXD0_GPIO_PIN               GPIO_PIN_4
-#define ETH_RXD0_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOC_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_RXD0_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOC_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_RXD1_GPIO_PORT              GPIOC
 #define ETH_RXD1_GPIO_PIN               GPIO_PIN_5
-#define ETH_RXD1_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOC_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_RXD1_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOC_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_TX_EN_GPIO_PORT             GPIOB
 #define ETH_TX_EN_GPIO_PIN              GPIO_PIN_11
-#define ETH_TX_EN_GPIO_CLK_ENABLE()     do{ __HAL_RCC_GPIOG_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_TX_EN_GPIO_CLK_ENABLE()     do{ __HAL_RCC_GPIOG_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_TXD0_GPIO_PORT              GPIOG
 #define ETH_TXD0_GPIO_PIN               GPIO_PIN_13
-#define ETH_TXD0_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOG_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_TXD0_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOG_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 #define ETH_TXD1_GPIO_PORT              GPIOG
 #define ETH_TXD1_GPIO_PIN               GPIO_PIN_14
-#define ETH_TXD1_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOG_CLK_ENABLE();}while(0)                  /* ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define ETH_TXD1_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOG_CLK_ENABLE();}while(0)                  /* ËùÔÚIO¿ÚÊ±ÖÓÊ¹ÄÜ */
 
 
 /******************************************************************************************/
 
-extern ETH_HandleTypeDef    g_eth_handler;                                      /* ï¿½ï¿½Ì«ï¿½ï¿½ï¿½ï¿½ï¿½ */
+extern ETH_HandleTypeDef    g_eth_handler;                                      /* ÒÔÌ«Íø¾ä±ú */
 extern ETH_DMADescTypeDef   g_eth_dma_rx_dscr_tab[ETH_RX_DESC_CNT];                      /* Ethernet Rx DMA Descriptors */
 extern ETH_DMADescTypeDef   g_eth_dma_tx_dscr_tab[ETH_TX_DESC_CNT];                      /* Ethernet Tx DMA Descriptors */
 
-uint8_t     ethernet_init(void);                                                /* ï¿½ï¿½Ì«ï¿½ï¿½Ð¾Æ¬ï¿½ï¿½Ê¼ï¿½ï¿½ */
-uint32_t    ethernet_read_phy(uint16_t reg);                                    /* ï¿½ï¿½È¡ï¿½ï¿½Ì«ï¿½ï¿½Ð¾Æ¬ï¿½Ä´ï¿½ï¿½ï¿½Öµ */
-void        ethernet_write_phy(uint16_t reg, uint16_t value);                   /* ï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½Ð¾Æ¬Ö¸ï¿½ï¿½ï¿½ï¿½Ö·Ð´ï¿½ï¿½Ä´ï¿½ï¿½ï¿½Öµ */
-uint8_t     ethernet_chip_get_speed(void);                                      /* ï¿½ï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½Ð¾Æ¬ï¿½ï¿½ï¿½Ù¶ï¿½Ä£Ê½ */
+uint8_t     ethernet_init(void);                                                /* ÒÔÌ«ÍøÐ¾Æ¬³õÊ¼»¯ */
+uint32_t    ethernet_read_phy(uint16_t reg);                                    /* ¶ÁÈ¡ÒÔÌ«ÍøÐ¾Æ¬¼Ä´æÆ÷Öµ */
+void        ethernet_write_phy(uint16_t reg, uint16_t value);                   /* ÏòÒÔÌ«ÍøÐ¾Æ¬Ö¸¶¨µØÖ·Ð´Èë¼Ä´æÆ÷Öµ */
+uint8_t     ethernet_chip_get_speed(void);                                      /* »ñµÃÒÔÌ«ÍøÐ¾Æ¬µÄËÙ¶ÈÄ£Ê½ */
 #endif
 
