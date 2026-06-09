@@ -66,18 +66,6 @@ static void test_show_result(char *name, uint8_t result)
 }
 
 /**
- * @brief       显示测试标题
- * @param       str: 标题字符串
- * @retval      无
- */
-static void test_show_title(char *str)
-{
-    g_test_y += 10;
-    lcd_show_string(10, g_test_y, 300, 24, 24, str, YELLOW);
-    g_test_y += 30;
-}
-
-/**
  * @brief       测试1: LCD显示测试
  * @retval      无
  */
